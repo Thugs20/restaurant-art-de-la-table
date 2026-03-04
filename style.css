@@ -1,0 +1,510 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #faf7f2;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ================= VARIABLES COULEURS ================= */
+:root {
+    --magenta: #b01257;
+    --gold: #c6a75e;
+    --turquoise: #1abc9c;
+    --orange: #e67e22;
+    --brick: #a63c2f;
+    --white: #ffffff;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+    position: fixed;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--magenta);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    height: 60px;
+    width: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--turquoise);
+}
+
+.language-switch button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.hamburger {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(176, 18, 87, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: var(--brick);
+}
+
+/* ================= ABOUT ================= */
+.about {
+    display: flex;
+    gap: 40px;
+    padding: 100px 0;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--magenta);
+    margin-bottom: 20px;
+}
+
+/* ================= CULINARY SECTION ================= */
+
+.culinary-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* GRID moderne auto-adaptatif */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+.service-item {
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+.service-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--magenta); /* cohérence avec ton site */
+}
+
+.culinary-section p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* CTA BAS */
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: var(--magenta);
+}
+
+
+/* ================= MENU ================= */
+.menu-section {
+    background: white;
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 50px;
+    color: var(--magenta);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* ================= GALLERY ================= */
+.gallery-section {
+    padding: 100px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= TESTIMONIALS PREMIUM ================= */
+
+.testimonials-section {
+    background: #f8f6f2;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.testimonial-intro {
+    max-width: 700px;
+    margin: 20px auto 60px auto;
+    color: #555;
+}
+
+.testimonial-card {
+    margin-bottom: 80px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial-role {
+    display: block;
+    color: var(--magenta);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: var(--gold);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #444;
+    line-height: 1.8;
+}
+
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* ================= RESERVATION ================= */
+.reservation-section {
+    background: var(--magenta);
+    padding: 100px 0;
+    color: white;
+}
+
+.reservation-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+#reservation-form {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#reservation-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+#form-status {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #111;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .socials a {
+    color: var(--turquoise);
+    margin-left: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer .socials a:hover {
+    color: var(--gold);
+    transform: scale(1.2);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+
+    .about {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    #logo{
+        height: 36px;
+    }
+
+    .testimonials-section {
+    padding: 70px 20px;
+}
+
+.testimonial-intro {
+    font-size: 0.95rem;
+}
+
+.testimonial-card {
+    margin-bottom: 60px;
+}
+
+.testimonial-img {
+    width: 75px;
+    height: 75px;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+}
+
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablette */
+@media (max-width: 992px) {
+    .services-grid {
+        gap: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .culinary-section {
+        padding: 60px 15px;
+    }
+
+    .service-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .cta-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .culinary-section p {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+

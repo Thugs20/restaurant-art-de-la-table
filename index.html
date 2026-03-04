@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= SEO ================= -->
+    <title>Art de la Table | Restaurant Gastronomique</title>
+    <meta name="description" content="Art de la Table - Une expérience gastronomique raffinée entre tradition et modernité.">
+
+    <!-- ================= Google Fonts ================= -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ================= Font-awesome ================= -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ================= CSS ================= -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="container nav-container">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img id="logo" src="images/logo_art_de_la_table.png" alt="Logo" title="Logo">
+            <h2>Art de la <span>Table</span></h2>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+                <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+                <li><a href="#reservation" data-i18n="nav_reservation">Réservation</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language Switch -->
+        <div class="language-switch">
+            <button onclick="setLanguage('fr')">FR</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <!-- Hamburger Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+</header>
+
+<!-- ================= HERO SLIDER ================= -->
+<section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1 id="hero-title">L'art de sublimer chaque saveur</h1>
+        <p id="hero-subtitle">Une expérience gastronomique entre passion et excellence.</p>
+        <a href="#reservation" class="btn-primary" data-i18n="hero_btn">Réserver une table</a>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about container">
+    <div class="about-text">
+        <h2 data-i18n="about_title">Une tradition réinventée</h2>
+        <p data-i18n="about_text">
+            Art de la Table célèbre l'élégance culinaire en mariant savoir-faire traditionnel et créativité contemporaine.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="images/about.webp" alt="Restaurant intérieur" loading="lazy">
+    </div>
+</section>
+
+<section class="culinary-section">
+    
+    <div class="services-grid">
+        
+        <div class="service-item">
+            <h3>Dîners Épicuriens</h3>
+            <p>Savourer des dîners exquis préparés par notre chef primé, invitant une palette de saveurs unique.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>Événements Privés</h3>
+            <p>Nous proposons des services de restauration exclusifs pour vos événements, garantissant une expérience totalement sur mesure.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>Ateliers Culinaires</h3>
+            <p>Participez à des ateliers animés par nos chefs où l'art culinaire devient une expérience immersive et enrichissante.</p>
+        </div>
+        
+    </div>
+
+    <div class="cta-container">
+        <h2>Découvrez l'Art Culinaire</h2>
+        <p>Plongez dans une expérience gastronomique inoubliable avec des plats raffinés et créatifs. Réservez votre table dès aujourd'hui pour une soirée d'exception.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+<section id="menu" class="menu-section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="menu_title">Notre Menu</h2>
+
+        <div class="menu-grid">
+
+            <!-- Exemple Carte -->
+            <div class="menu-card">
+                <img src="images/menu1.webp" alt="Entrée" title=" Plat d'Entrée" onclick="openLightbox(this)" loading="lazy">
+                <h3>Foie Gras Maison</h3>
+                <p>Servi avec chutney de figues et pain brioché.</p>
+                <span class="price">18€</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu2.webp" alt="Plat" title=" Plat Menu" onclick="openLightbox(this)" loading="lazy">
+                <h3>Filet de Bœuf Rossini</h3>
+                <p>Accompagné de légumes de saison.</p>
+                <span class="price">32€</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu3.webp" alt="Dessert" title="Dessert" onclick="openLightbox(this)" loading="lazy">
+                <h3>Fondant au Chocolat</h3>
+                <p>Coeur coulant et glace vanille.</p>
+                <span class="price">12€</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu4.webp" alt="Entrées" title="Entrée Franco-Italiennes" onclick="openLightbox(this)" loading="lazy">
+                <h3>Salade Caprese</h3>
+                <p>Tomates fraîches, mozzarella di bufala, basilic frais, huile d’olive extra vierge.</p>
+                <span class="price">8.6€</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu5.webp" alt="Entrées" title="Entrée Franco-Italiennes" onclick="openLightbox(this)" loading="lazy">
+                <h3>Soupe à l’oignon gratinée</h3>
+                <p>Soupe traditionnelle française au fromage gratiné.</p>
+                <span class="price">7,90 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu6.webp" alt="Entrées" title="Pastels africains" onclick="openLightbox(this)" loading="lazy">
+                <h3>Pastels béninois</h3>
+                <p>Beignets frits farcis au poisson épicé, servis avec sauce tomate pimentée.</p>
+                <span class="price">6,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu7.webp" alt="Entrées" title="Alloco ivoirien" onclick="openLightbox(this)" loading="lazy">
+                <h3>Alloco</h3>
+                <p>Bananes plantain frites accompagnées d’oignons et de piment frais.</p>
+                <span class="price">5,90 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu8.webp" alt="Entrées" title="Ata béninois" onclick="openLightbox(this)" loading="lazy">
+                <h3>Ata (Gâteau de haricot)</h3>
+                <p>Beignet traditionnel béninois à base de haricots écrasés et épices.</p>
+                <span class="price">5,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu9.webp" alt="Plats" title="Mafé africain" onclick="openLightbox(this)" loading="lazy">
+                <h3>Mafé au bœuf</h3>
+                <p>Sauce onctueuse à l’arachide avec viande mijotée et riz blanc.</p>
+                <span class="price">17,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu10.webp" alt="Plats" title="Poulet Yassa sénégalais" onclick="openLightbox(this)" loading="lazy">
+                <h3>Poulet Yassa</h3>
+                <p>Poulet mariné au citron et aux oignons, servi avec riz parfumé.</p>
+                <span class="price">16,90 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu11.webp" alt="Plats" title="Sauce gombo béninoise" onclick="openLightbox(this)" loading="lazy">
+                <h3>Sauce Gombo</h3>
+                <p>Pâte de maïs accompagnée de sauce gombo traditionnelle béninoise.</p>
+                <span class="price">14,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu12.webp" alt="Desserts" title="Salade de fruits exotiques" onclick="openLightbox(this)" loading="lazy">
+                <h3>Salade de fruits exotiques</h3>
+                <p>Mangue, ananas, papaye et noix de coco fraîche.</p>
+                <span class="price">6,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu13.webp" alt="Plats" title="Riz Jollof africain" onclick="openLightbox(this)" loading="lazy">
+                <h3>Riz Jollof</h3>
+                <p>Riz cuisiné à la tomate et aux épices africaines, servi avec viande ou poisson.</p>
+                <span class="price">15,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu14.webp" alt="Plats" title="Sauce Egoussi" onclick="openLightbox(this)" loading="lazy">
+                <h3>Sauce Egoussi & Fufu</h3>
+                <p>Sauce graine de melon avec viande et légumes, accompagnée de fufu.</p>
+                <span class="price">18,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu15.webp" alt="Desserts" title="Thiakry sénégalais" onclick="openLightbox(this)" loading="lazy">
+                <h3>Thiakry</h3>
+                <p>Couscous sucré au lait caillé, vanille et raisins secs.</p>
+                <span class="price">5,90 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu16.webp" alt="Desserts" title="Beignets africains" onclick="openLightbox(this)" loading="lazy">
+                <h3>Beignets sucrés</h3>
+                <p>Beignets moelleux africains saupoudrés de sucre.</p>
+                <span class="price">5,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu17.webp" alt="Plats" title="Amiwo béninois" onclick="openLightbox(this)" loading="lazy">
+                <h3>Amiwo & Poulet frit</h3>
+                <p>Pâte de maïs rouge assaisonnée, servie avec poulet braisé croustillant.</p>
+                <span class="price">15,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu18.webp" alt="Boissons" title="Bissap africain" onclick="openLightbox(this)" loading="lazy">
+                <h3>Bissap</h3>
+                <p>Boisson fraîche à base de fleurs d’hibiscus infusées, légèrement sucrée et parfumée à la menthe.</p>
+                <span class="price">4,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu19.webp" alt="Boissons" title="Jus de Gingembre africain" onclick="openLightbox(this)" loading="lazy">
+                <h3>Jus de Gingembre</h3>
+                <p>Boisson traditionnelle épicée au gingembre frais, citron et sucre de canne.</p>
+                <span class="price">4,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu20.webp" alt="Boissons" title="Jus de Baobab" onclick="openLightbox(this)" loading="lazy">
+                <h3>Jus de Baobab</h3>
+                <p>Boisson naturelle riche et onctueuse, légèrement acidulée et rafraîchissante.</p>
+                <span class="price">4,90 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu21.webp" alt="Boissons" title="Tchapalo" onclick="openLightbox(this)" loading="lazy">
+                <h3>Tchapalo</h3>
+                <p>Bière traditionnelle africaine à base de mil ou de maïs, légèrement fermentée.</p>
+                <span class="price">2,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu22.webp" alt="Boissons" title="Sodabi béninois" onclick="openLightbox(this)" loading="lazy">
+                <h3>Sodabi</h3>
+                <p>Eau-de-vie traditionnelle béninoise distillée à partir de vin de palme.</p>
+                <span class="price">6,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu23.webp" alt="Cocktails" title="Cocktail Bissap Royal" onclick="openLightbox(this)" loading="lazy">
+                <h3>Bissap Royal</h3>
+                <p>Bissap frais revisité avec citron vert et touche de rhum.</p>
+                <span class="price">8,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu24.webp" alt="Cocktails" title="Cocktail smoothies" onclick="openLightbox(this)" loading="lazy">
+                <h3>smoothies</h3>
+                <p>Mélange exotique mangue, ananas et vodka.</p>
+                <span class="price">9,00 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu25.webp" alt="Cocktails" title="Sodabi Punch" onclick="openLightbox(this)" loading="lazy">
+                <h3>Cocktails a la grenadine</h3>
+                <p>Avec sa couleur rubis et son goût sucré, la grenadine est une alliée de choix en mixologie.</p>
+                <span class="price">9,50 €</span>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/menu26.webp" alt="Cocktails" title="Gingembre Sunset" onclick="openLightbox(this)" loading="lazy">
+                <h3>Gingembre Sunset</h3>
+                <p>Cocktail frais à base de jus de gingembre, orange et rhum blanc.</p>
+                <span class="price">8,90 €</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2 class="section-title">Galerie</h2>
+
+        <div class="gallery-grid">
+            <img src="images/galerie1.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie2.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie3.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie4.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie5.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie6.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie7.webp" onclick="openLightbox(this)" loading="lazy">
+            <img src="images/galerie8.webp" onclick="openLightbox(this)" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ================= TESTIMONIALS PREMIUM ================= -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+
+        <h2 class="section-title">Témoignages de Nos Clients</h2>
+
+        <p class="testimonial-intro">
+            Découvrez comment nos clients ont vécu l'expérience exceptionnelle
+            d’Art de la Table grâce à nos créations culinaires uniques.
+            Nous nous engageons à vous offrir le meilleur.
+        </p>
+
+        <!-- Témoignage 1 -->
+        <div class="testimonial-card">
+
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img" loading="lazy">
+
+            <h3>Marie Dupont</h3>
+            <span class="testimonial-role">Critique Gastronomique</span>
+
+            <div class="stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p class="testimonial-text">
+                Art de la Table est un véritable bijou gastronomique.
+                Les plats sont non seulement incroyablement beaux,
+                mais ils offrent également des saveurs authentiques et délicates.
+                Une expérience à ne pas manquer !
+            </p>
+
+        </div>
+
+        <!-- Témoignage 2 -->
+        <div class="testimonial-card">
+
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-img" loading="lazy">
+
+            <h3>Sophie Bernard</h3>
+            <span class="testimonial-role">Blogueuse de Voyage</span>
+
+            <div class="stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p class="testimonial-text">
+                Un cadre enchanteur et une cuisine raffinée.
+                Le service est impeccable et chaque plat m’a laissé une impression durable.
+                Je reviendrai avec plaisir pour découvrir d’autres merveilles.
+            </p>
+
+        </div>
+
+        <!-- Témoignage 3 -->
+        <div class="testimonial-card">
+
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img" loading="lazy">
+
+            <h3>François Martin</h3>
+            <span class="testimonial-role">Chef Cuisinier</span>
+
+            <div class="stars">
+                ★ ★ ★ ★ ★
+            </div>
+
+            <p class="testimonial-text">
+                Chaque repas est un voyage culinaire.
+                La créativité des plats et l’attention portée aux détails
+                transforment chaque dîner en moment inoubliable.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<!-- ================= RESERVATION ================= -->
+<section id="reservation" class="reservation-section">
+    <div class="container">
+        <h2 data-i18n="reservation_title">Réservez votre table</h2>
+
+        <form id="reservation-form">
+
+            <input type="text" name="from_name" placeholder="Nom complet" required>
+            <input type="email" name="from_email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Téléphone" required>
+            <input type="date" name="date" required>
+            <input type="time" name="time" required>
+            <input type="number" name="guests" placeholder="Nombre de personnes" required>
+
+            <button type="submit" class="btn-primary">Réserver</button>
+
+        </form>
+
+        <div id="form-status"></div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container footer-container">
+        <p>© 2026 Art de la Table - Tous droits réservés</p>
+
+        <div class="socials">
+            <a><i class="fab fa-facebook-f"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+            <a><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/2290191690292" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:contact@artdelatable.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- ================= EmailJS ================= -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<!-- ================= JS ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
