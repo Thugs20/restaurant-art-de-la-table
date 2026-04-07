@@ -1,39 +1,54 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-    <!-- ================= META ================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ================= SEO ================= -->
+    <!-- SEO -->
     <title>Art de la Table | Restaurant Gastronomique</title>
-    <meta name="description" content="Art de la Table - Une expérience gastronomique raffinée entre tradition et modernité.">
+    <meta name="description" content="Art de la Table – Une expérience gastronomique raffinée entre tradition et modernité. Site de démonstration réalisé par Fabrice Houeto.">
 
-    <!-- ================= Google Fonts ================= -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- ⚠️ AVERTISSEMENT PORTFOLIO -->
+    <!-- Ce site est un projet de démonstration fictif créé par Fabrice Houeto (développeur web).
+         Le restaurant "Art de la Table" est imaginaire. Toutes les images proviennent d'Unsplash (licence libre).
+         Les témoignages sont fictifs. Ce projet ne représente pas un établissement réel. -->
 
-    <!-- ================= Font-awesome ================= -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- ================= CSS ================= -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-    <div class="container nav-container">
+<!-- =============== BADGE PORTFOLIO =============== -->
+<div class="portfolio-badge" title="Projet de démonstration fictif">
+    ✦ Démo Portfolio
+</div>
 
-        <!-- Logo -->
+<!-- =============== THEME TOGGLE =============== -->
+<button class="theme-toggle" id="themeToggle" aria-label="Changer le mode">
+    <span class="toggle-icon sun">☀</span>
+    <span class="toggle-icon moon">☽</span>
+</button>
+
+<!-- =============== HEADER =============== -->
+<header class="header" id="header">
+    <div class="container nav-container">
         <div class="logo">
-            <img id="logo" src="images/logo_art_de_la_table.png" alt="Logo" title="Logo">
-            <h2>Art de la <span>Table</span></h2>
+            <span class="logo-mark">✦</span>
+            <div class="logo-text">
+                <h2>Art de la <em>Table</em></h2>
+            </div>
         </div>
 
-        <!-- Navigation -->
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" data-i18n="nav_home">Accueil</a></li>
                 <li><a href="#about" data-i18n="nav_about">À propos</a></li>
                 <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
@@ -42,448 +57,446 @@
             </ul>
         </nav>
 
-        <!-- Language Switch -->
-        <div class="language-switch">
-            <button onclick="setLanguage('fr')">FR</button>
-            <button onclick="setLanguage('en')">EN</button>
+        <div class="nav-right">
+            <div class="language-switch">
+                <button onclick="setLanguage('fr')" class="lang-btn" id="btnFR">FR</button>
+                <span class="lang-sep">|</span>
+                <button onclick="setLanguage('en')" class="lang-btn" id="btnEN">EN</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-
-        <!-- Hamburger Mobile -->
-        <div class="hamburger" onclick="toggleMenu()">
-            ☰
-        </div>
-
     </div>
 </header>
 
-<!-- ================= HERO SLIDER ================= -->
+<!-- =============== HERO =============== -->
 <section id="hero" class="hero">
+    <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
-        <h1 id="hero-title">L'art de sublimer chaque saveur</h1>
-        <p id="hero-subtitle">Une expérience gastronomique entre passion et excellence.</p>
-        <a href="#reservation" class="btn-primary" data-i18n="hero_btn">Réserver une table</a>
+        <p class="hero-eyebrow reveal-up">Gastronomie · Élégance · Passion</p>
+        <h1 class="hero-title" id="hero-title">L'art de sublimer chaque saveur</h1>
+        <p class="hero-subtitle reveal-up delay-2" id="hero-subtitle">Une expérience gastronomique entre passion et excellence.</p>
+        <a href="#reservation" class="btn-primary reveal-up delay-3" data-i18n="hero_btn">Réserver une table</a>
     </div>
+    <div class="hero-scroll-hint">
+        <span>Défiler</span>
+        <div class="scroll-line"></div>
+    </div>
+    <div class="hero-slide-dots" id="slideDots"></div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="about container">
-    <div class="about-text">
-        <h2 data-i18n="about_title">Une tradition réinventée</h2>
-        <p data-i18n="about_text">
-            Art de la Table célèbre l'élégance culinaire en mariant savoir-faire traditionnel et créativité contemporaine.
-        </p>
+<!-- =============== MARQUEE =============== -->
+<div class="marquee-bar">
+    <div class="marquee-track">
+        <span>Dîners Épicuriens</span>
+        <span class="dot">✦</span>
+        <span>Cuisine Franco-Africaine</span>
+        <span class="dot">✦</span>
+        <span>Événements Privés</span>
+        <span class="dot">✦</span>
+        <span>Ateliers Culinaires</span>
+        <span class="dot">✦</span>
+        <span>Saveurs d'Exception</span>
+        <span class="dot">✦</span>
+        <span>Dîners Épicuriens</span>
+        <span class="dot">✦</span>
+        <span>Cuisine Franco-Africaine</span>
+        <span class="dot">✦</span>
+        <span>Événements Privés</span>
+        <span class="dot">✦</span>
+        <span>Ateliers Culinaires</span>
+        <span class="dot">✦</span>
+        <span>Saveurs d'Exception</span>
+        <span class="dot">✦</span>
     </div>
-
-    <div class="about-image">
-        <img src="images/about.webp" alt="Restaurant intérieur" loading="lazy">
-    </div>
-</section>
-
-<section class="culinary-section">
-    
-    <div class="services-grid">
-        
-        <div class="service-item">
-            <h3>Dîners Épicuriens</h3>
-            <p>Savourer des dîners exquis préparés par notre chef primé, invitant une palette de saveurs unique.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Événements Privés</h3>
-            <p>Nous proposons des services de restauration exclusifs pour vos événements, garantissant une expérience totalement sur mesure.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Ateliers Culinaires</h3>
-            <p>Participez à des ateliers animés par nos chefs où l'art culinaire devient une expérience immersive et enrichissante.</p>
-        </div>
-        
-    </div>
-
-    <div class="cta-container">
-        <h2>Découvrez l'Art Culinaire</h2>
-        <p>Plongez dans une expérience gastronomique inoubliable avec des plats raffinés et créatifs. Réservez votre table dès aujourd'hui pour une soirée d'exception.</p>
-    </div>
-
-</section>
-
-
-<!-- ================= MENU ================= -->
-<section id="menu" class="menu-section">
-    <div class="container">
-        <h2 class="section-title" data-i18n="menu_title">Notre Menu</h2>
-
-        <div class="menu-grid">
-
-            <!-- Exemple Carte -->
-            <div class="menu-card">
-                <img src="images/menu1.webp" alt="Entrée" title=" Plat d'Entrée" onclick="openLightbox(this)" loading="lazy">
-                <h3>Foie Gras Maison</h3>
-                <p>Servi avec chutney de figues et pain brioché.</p>
-                <span class="price">18€</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu2.webp" alt="Plat" title=" Plat Menu" onclick="openLightbox(this)" loading="lazy">
-                <h3>Filet de Bœuf Rossini</h3>
-                <p>Accompagné de légumes de saison.</p>
-                <span class="price">32€</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu3.webp" alt="Dessert" title="Dessert" onclick="openLightbox(this)" loading="lazy">
-                <h3>Fondant au Chocolat</h3>
-                <p>Coeur coulant et glace vanille.</p>
-                <span class="price">12€</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu4.webp" alt="Entrées" title="Entrée Franco-Italiennes" onclick="openLightbox(this)" loading="lazy">
-                <h3>Salade Caprese</h3>
-                <p>Tomates fraîches, mozzarella di bufala, basilic frais, huile d’olive extra vierge.</p>
-                <span class="price">8.6€</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu5.webp" alt="Entrées" title="Entrée Franco-Italiennes" onclick="openLightbox(this)" loading="lazy">
-                <h3>Soupe à l’oignon gratinée</h3>
-                <p>Soupe traditionnelle française au fromage gratiné.</p>
-                <span class="price">7,90 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu6.webp" alt="Entrées" title="Pastels africains" onclick="openLightbox(this)" loading="lazy">
-                <h3>Pastels béninois</h3>
-                <p>Beignets frits farcis au poisson épicé, servis avec sauce tomate pimentée.</p>
-                <span class="price">6,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu7.webp" alt="Entrées" title="Alloco ivoirien" onclick="openLightbox(this)" loading="lazy">
-                <h3>Alloco</h3>
-                <p>Bananes plantain frites accompagnées d’oignons et de piment frais.</p>
-                <span class="price">5,90 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu8.webp" alt="Entrées" title="Ata béninois" onclick="openLightbox(this)" loading="lazy">
-                <h3>Ata (Gâteau de haricot)</h3>
-                <p>Beignet traditionnel béninois à base de haricots écrasés et épices.</p>
-                <span class="price">5,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu9.webp" alt="Plats" title="Mafé africain" onclick="openLightbox(this)" loading="lazy">
-                <h3>Mafé au bœuf</h3>
-                <p>Sauce onctueuse à l’arachide avec viande mijotée et riz blanc.</p>
-                <span class="price">17,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu10.webp" alt="Plats" title="Poulet Yassa sénégalais" onclick="openLightbox(this)" loading="lazy">
-                <h3>Poulet Yassa</h3>
-                <p>Poulet mariné au citron et aux oignons, servi avec riz parfumé.</p>
-                <span class="price">16,90 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu11.webp" alt="Plats" title="Sauce gombo béninoise" onclick="openLightbox(this)" loading="lazy">
-                <h3>Sauce Gombo</h3>
-                <p>Pâte de maïs accompagnée de sauce gombo traditionnelle béninoise.</p>
-                <span class="price">14,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu12.webp" alt="Desserts" title="Salade de fruits exotiques" onclick="openLightbox(this)" loading="lazy">
-                <h3>Salade de fruits exotiques</h3>
-                <p>Mangue, ananas, papaye et noix de coco fraîche.</p>
-                <span class="price">6,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu13.webp" alt="Plats" title="Riz Jollof africain" onclick="openLightbox(this)" loading="lazy">
-                <h3>Riz Jollof</h3>
-                <p>Riz cuisiné à la tomate et aux épices africaines, servi avec viande ou poisson.</p>
-                <span class="price">15,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu14.webp" alt="Plats" title="Sauce Egoussi" onclick="openLightbox(this)" loading="lazy">
-                <h3>Sauce Egoussi & Fufu</h3>
-                <p>Sauce graine de melon avec viande et légumes, accompagnée de fufu.</p>
-                <span class="price">18,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu15.webp" alt="Desserts" title="Thiakry sénégalais" onclick="openLightbox(this)" loading="lazy">
-                <h3>Thiakry</h3>
-                <p>Couscous sucré au lait caillé, vanille et raisins secs.</p>
-                <span class="price">5,90 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu16.webp" alt="Desserts" title="Beignets africains" onclick="openLightbox(this)" loading="lazy">
-                <h3>Beignets sucrés</h3>
-                <p>Beignets moelleux africains saupoudrés de sucre.</p>
-                <span class="price">5,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu17.webp" alt="Plats" title="Amiwo béninois" onclick="openLightbox(this)" loading="lazy">
-                <h3>Amiwo & Poulet frit</h3>
-                <p>Pâte de maïs rouge assaisonnée, servie avec poulet braisé croustillant.</p>
-                <span class="price">15,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu18.webp" alt="Boissons" title="Bissap africain" onclick="openLightbox(this)" loading="lazy">
-                <h3>Bissap</h3>
-                <p>Boisson fraîche à base de fleurs d’hibiscus infusées, légèrement sucrée et parfumée à la menthe.</p>
-                <span class="price">4,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu19.webp" alt="Boissons" title="Jus de Gingembre africain" onclick="openLightbox(this)" loading="lazy">
-                <h3>Jus de Gingembre</h3>
-                <p>Boisson traditionnelle épicée au gingembre frais, citron et sucre de canne.</p>
-                <span class="price">4,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu20.webp" alt="Boissons" title="Jus de Baobab" onclick="openLightbox(this)" loading="lazy">
-                <h3>Jus de Baobab</h3>
-                <p>Boisson naturelle riche et onctueuse, légèrement acidulée et rafraîchissante.</p>
-                <span class="price">4,90 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu21.webp" alt="Boissons" title="Tchapalo" onclick="openLightbox(this)" loading="lazy">
-                <h3>Tchapalo</h3>
-                <p>Bière traditionnelle africaine à base de mil ou de maïs, légèrement fermentée.</p>
-                <span class="price">2,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu22.webp" alt="Boissons" title="Sodabi béninois" onclick="openLightbox(this)" loading="lazy">
-                <h3>Sodabi</h3>
-                <p>Eau-de-vie traditionnelle béninoise distillée à partir de vin de palme.</p>
-                <span class="price">6,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu23.webp" alt="Cocktails" title="Cocktail Bissap Royal" onclick="openLightbox(this)" loading="lazy">
-                <h3>Bissap Royal</h3>
-                <p>Bissap frais revisité avec citron vert et touche de rhum.</p>
-                <span class="price">8,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu24.webp" alt="Cocktails" title="Cocktail smoothies" onclick="openLightbox(this)" loading="lazy">
-                <h3>smoothies</h3>
-                <p>Mélange exotique mangue, ananas et vodka.</p>
-                <span class="price">9,00 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu25.webp" alt="Cocktails" title="Sodabi Punch" onclick="openLightbox(this)" loading="lazy">
-                <h3>Cocktails a la grenadine</h3>
-                <p>Avec sa couleur rubis et son goût sucré, la grenadine est une alliée de choix en mixologie.</p>
-                <span class="price">9,50 €</span>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/menu26.webp" alt="Cocktails" title="Gingembre Sunset" onclick="openLightbox(this)" loading="lazy">
-                <h3>Gingembre Sunset</h3>
-                <p>Cocktail frais à base de jus de gingembre, orange et rhum blanc.</p>
-                <span class="price">8,90 €</span>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= GALLERY ================= -->
-<section id="gallery" class="gallery-section">
-    <div class="container">
-        <h2 class="section-title">Galerie</h2>
-
-        <div class="gallery-grid">
-            <img src="images/galerie1.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie2.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie3.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie4.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie5.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie6.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie7.webp" onclick="openLightbox(this)" loading="lazy">
-            <img src="images/galerie8.webp" onclick="openLightbox(this)" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<!-- ================= TESTIMONIALS PREMIUM ================= -->
-<section id="testimonials" class="testimonials-section">
-    <div class="container">
-
-        <h2 class="section-title">Témoignages de Nos Clients</h2>
-
-        <p class="testimonial-intro">
-            Découvrez comment nos clients ont vécu l'expérience exceptionnelle
-            d’Art de la Table grâce à nos créations culinaires uniques.
-            Nous nous engageons à vous offrir le meilleur.
-        </p>
-
-        <!-- Témoignage 1 -->
-        <div class="testimonial-card">
-
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img" loading="lazy">
-
-            <h3>Marie Dupont</h3>
-            <span class="testimonial-role">Critique Gastronomique</span>
-
-            <div class="stars">
-                ★ ★ ★ ★ ★
-            </div>
-
-            <p class="testimonial-text">
-                Art de la Table est un véritable bijou gastronomique.
-                Les plats sont non seulement incroyablement beaux,
-                mais ils offrent également des saveurs authentiques et délicates.
-                Une expérience à ne pas manquer !
-            </p>
-
-        </div>
-
-        <!-- Témoignage 2 -->
-        <div class="testimonial-card">
-
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-img" loading="lazy">
-
-            <h3>Sophie Bernard</h3>
-            <span class="testimonial-role">Blogueuse de Voyage</span>
-
-            <div class="stars">
-                ★ ★ ★ ★ ★
-            </div>
-
-            <p class="testimonial-text">
-                Un cadre enchanteur et une cuisine raffinée.
-                Le service est impeccable et chaque plat m’a laissé une impression durable.
-                Je reviendrai avec plaisir pour découvrir d’autres merveilles.
-            </p>
-
-        </div>
-
-        <!-- Témoignage 3 -->
-        <div class="testimonial-card">
-
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img" loading="lazy">
-
-            <h3>François Martin</h3>
-            <span class="testimonial-role">Chef Cuisinier</span>
-
-            <div class="stars">
-                ★ ★ ★ ★ ★
-            </div>
-
-            <p class="testimonial-text">
-                Chaque repas est un voyage culinaire.
-                La créativité des plats et l’attention portée aux détails
-                transforment chaque dîner en moment inoubliable.
-            </p>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= SITE CREATOR ================= -->
-<section class="creator-section">
-
-    <div class="creator-container">
-
-        <img src="images/ma_photo.webp" alt="Créateur du site" class="creator-img">
-
-        <h3>Site conçu par Fabrice Houeto</h3>
-
-        <p class="creator-description">
-            Développeur Web passionné, je conçois des sites modernes, rapides et adaptés aux besoins des entreprises,
-            restaurants et entrepreneurs. Mon objectif est d'aider les professionnels à avoir une présence en ligne
-            élégante et efficace.
-            Besoin d’un site web professionnel pour votre entreprise ? Contactez-moi dès aujourd’hui.
-        </p>
-
-        <div class="creator-buttons">
-
-            <a href="tel:+2290191690292" class="creator-btn call">
-                📞 Appeler
-            </a>
-
-            <a href="https://wa.me/22991690292" target="_blank" class="creator-btn whatsapp">
-                💬 WhatsApp
-            </a>
-
-        </div>
-
-        <a href="https://fabrice-services-info.netlify.app/" target="_blank" class="creator-site">
-            Voir mon site officiel
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
 </div>
 
-<!-- ================= RESERVATION ================= -->
-<section id="reservation" class="reservation-section">
+<!-- =============== ABOUT =============== -->
+<section id="about" class="about-section">
+    <div class="container about-container">
+        <div class="about-image-wrap fade-in-left">
+            <div class="about-img-frame">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Intérieur restaurant fictif" loading="lazy">
+            </div>
+            <div class="about-accent-box">
+                <p class="about-accent-number">2018</p>
+                <p class="about-accent-label">Fondé</p>
+            </div>
+        </div>
+        <div class="about-text fade-in-right">
+            <p class="section-eyebrow" data-i18n="about_eyebrow">Notre Histoire</p>
+            <h2 data-i18n="about_title">Une tradition réinventée</h2>
+            <p data-i18n="about_text">Art de la Table célèbre l'élégance culinaire en mariant savoir-faire traditionnel et créativité contemporaine. Chaque assiette raconte un voyage, chaque bouchée, une émotion.</p>
+            <div class="about-stats">
+                <div class="stat"><strong>25+</strong><span>Plats signature</span></div>
+                <div class="stat"><strong>12</strong><span>Années d'expérience</span></div>
+                <div class="stat"><strong>★ 4.9</strong><span>Note clients</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============== SERVICES =============== -->
+<section class="services-section">
     <div class="container">
-        <h2 data-i18n="reservation_title">Réservez votre table</h2>
+        <p class="section-eyebrow center">Ce que nous offrons</p>
+        <h2 class="section-title center">L'Art Culinaire</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in-up">
+                <div class="service-icon">🍽</div>
+                <h3>Dîners Épicuriens</h3>
+                <p>Savourer des dîners exquis préparés par notre chef primé, invitant une palette de saveurs unique.</p>
+            </div>
+            <div class="service-card fade-in-up delay-1">
+                <div class="service-icon">🥂</div>
+                <h3>Événements Privés</h3>
+                <p>Des services de restauration exclusifs pour vos événements, garantissant une expérience totalement sur mesure.</p>
+            </div>
+            <div class="service-card fade-in-up delay-2">
+                <div class="service-icon">👨‍🍳</div>
+                <h3>Ateliers Culinaires</h3>
+                <p>Participez à des ateliers animés par nos chefs où l'art culinaire devient une expérience immersive.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============== MENU =============== -->
+<section id="menu" class="menu-section">
+    <div class="container">
+        <p class="section-eyebrow center" data-i18n="menu_eyebrow">Nos créations</p>
+        <h2 class="section-title center" data-i18n="menu_title">Notre Menu</h2>
+
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="entree">Entrées</button>
+            <button class="filter-btn" data-filter="plat">Plats</button>
+            <button class="filter-btn" data-filter="dessert">Desserts</button>
+            <button class="filter-btn" data-filter="boisson">Boissons</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+
+            <div class="menu-card fade-in-up" data-cat="entree">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1510693206972-df098062cb71?w=500&q=80" alt="Foie Gras" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Entrée</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Foie Gras Maison</h3>
+                    <p>Servi avec chutney de figues et pain brioché.</p>
+                    <span class="price">18 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-1" data-cat="plat">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Filet de Bœuf" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Plat</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Filet de Bœuf Rossini</h3>
+                    <p>Accompagné de légumes de saison.</p>
+                    <span class="price">32 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-2" data-cat="dessert">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=500&q=80" alt="Fondant Chocolat" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Dessert</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Fondant au Chocolat</h3>
+                    <p>Cœur coulant et glace vanille.</p>
+                    <span class="price">12 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up" data-cat="entree">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Salade Caprese" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Entrée</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Salade Caprese</h3>
+                    <p>Tomates fraîches, mozzarella di bufala, basilic, huile d'olive.</p>
+                    <span class="price">8,60 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-1" data-cat="entree">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" alt="Soupe à l'oignon" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Entrée</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Soupe à l'Oignon Gratinée</h3>
+                    <p>Soupe traditionnelle française au fromage gratiné.</p>
+                    <span class="price">7,90 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-2" data-cat="entree">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=500&q=80" alt="Beignets" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Entrée</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Pastels Béninois</h3>
+                    <p>Beignets farcis au poisson épicé, sauce tomate pimentée.</p>
+                    <span class="price">6,50 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up" data-cat="entree">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=500&q=80" alt="Alloco" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Entrée</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Alloco</h3>
+                    <p>Bananes plantain frites, oignons et piment frais.</p>
+                    <span class="price">5,90 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-1" data-cat="plat">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=500&q=80" alt="Mafé" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Plat</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Mafé au Bœuf</h3>
+                    <p>Sauce onctueuse à l'arachide avec viande mijotée et riz blanc.</p>
+                    <span class="price">17,50 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-2" data-cat="plat">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&q=80" alt="Poulet Yassa" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Plat</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Poulet Yassa</h3>
+                    <p>Poulet mariné au citron et aux oignons, riz parfumé.</p>
+                    <span class="price">16,90 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up" data-cat="boisson">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&q=80" alt="Cocktail" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Boisson</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Cocktail Grenadine</h3>
+                    <p>Couleur rubis et goût sucré, une alliée parfaite en mixologie.</p>
+                    <span class="price">9,50 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-1" data-cat="boisson">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?w=500&q=80" alt="Gingembre Sunset" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Boisson</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Gingembre Sunset</h3>
+                    <p>Jus de gingembre, orange et rhum blanc, fraîcheur garantie.</p>
+                    <span class="price">8,90 €</span>
+                </div>
+            </div>
+
+            <div class="menu-card fade-in-up delay-2" data-cat="dessert">
+                <div class="menu-card-img">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" alt="Crème brûlée" loading="lazy" onclick="openLightbox(this)">
+                    <span class="menu-tag">Dessert</span>
+                </div>
+                <div class="menu-card-body">
+                    <h3>Crème Brûlée à la Vanille</h3>
+                    <p>Crème onctueuse, caramel croustillant à la flamme.</p>
+                    <span class="price">9,00 €</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =============== GALLERY =============== -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <p class="section-eyebrow center">Instants</p>
+        <h2 class="section-title center">Galerie</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in-up" style="--i:0">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 1">
+            </div>
+            <div class="gallery-item fade-in-up" style="--i:1">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 2">
+            </div>
+            <div class="gallery-item fade-in-up" style="--i:2">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 3">
+            </div>
+            <div class="gallery-item fade-in-up" style="--i:3">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 4">
+            </div>
+            <div class="gallery-item fade-in-up" style="--i:4">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 5">
+            </div>
+            <div class="gallery-item fade-in-up" style="--i:5">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" loading="lazy" onclick="openLightbox(this)" alt="Galerie 6">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============== TESTIMONIALS =============== -->
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <p class="section-eyebrow center">Avis</p>
+        <h2 class="section-title center">Témoignages <em>Fictifs</em></h2>
+        <p class="section-note">⚠ Ces témoignages sont fictifs et créés pour les besoins de cette démonstration portfolio.</p>
+
+        <div class="testimonials-slider" id="testimonialsSlider">
+
+            <div class="testimonial-card active">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="testimonial-text">"Art de la Table est un véritable bijou gastronomique. Les plats sont non seulement incroyablement beaux, mais ils offrent des saveurs authentiques et délicates."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie D." loading="lazy">
+                    <div>
+                        <strong>Marie D.</strong>
+                        <span>Critique Gastronomique</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="testimonial-text">"Un cadre enchanteur et une cuisine raffinée. Le service est impeccable et chaque plat m'a laissé une impression durable."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie B." loading="lazy">
+                    <div>
+                        <strong>Sophie B.</strong>
+                        <span>Blogueuse de Voyage</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <p class="testimonial-text">"Chaque repas est un voyage culinaire. La créativité des plats et l'attention portée aux détails transforment chaque dîner en moment inoubliable."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="François M." loading="lazy">
+                    <div>
+                        <strong>François M.</strong>
+                        <span>Chef Cuisinier</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="testimonial-nav">
+            <button onclick="prevTestimonial()">←</button>
+            <button onclick="nextTestimonial()">→</button>
+        </div>
+    </div>
+</section>
+
+<!-- =============== CREATOR =============== -->
+<section class="creator-section">
+    <div class="creator-container">
+        <div class="creator-line"></div>
+        <img src="images/Ma-photo.webp" alt="Photo développeur – remplacez par votre vraie photo" class="creator-img" loading="lazy">
+        <p class="creator-role">Développeur Web</p>
+        <h3>Fabrice Houeto</h3>
+        <p class="creator-description">
+            Passionné par la conception d'expériences web élégantes et performantes, je réalise des sites modernes adaptés aux besoins des entreprises, restaurants et entrepreneurs.
+            <br><em>Ce site est un projet de démonstration fictif.</em>
+        </p>
+        <div class="creator-buttons">
+            <a href="tel:+2290191690292" class="creator-btn call"><i class="fas fa-phone"></i> Appeler</a>
+            <a href="https://wa.me/22991690292" target="_blank" rel="noopener noreferrer" class="creator-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <a href="https://hfrwebdesigner.vercel.app/" target="_blank" rel="noopener noreferrer" class="creator-site">Voir mon portfolio →</a>
+    </div>
+</section>
+
+<!-- =============== LIGHTBOX =============== -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" alt="Image agrandie">
+</div>
+
+<!-- =============== RESERVATION =============== -->
+<section id="reservation" class="reservation-section">
+    <div class="reservation-deco">✦</div>
+    <div class="container">
+        <p class="section-eyebrow center light">Rejoignez-nous</p>
+        <h2 class="section-title center" data-i18n="reservation_title">Réservez votre table</h2>
+        <p class="reservation-note">⚠ Formulaire de démonstration – les données ne sont pas envoyées.</p>
 
         <form id="reservation-form">
-
-            <input type="text" name="from_name" placeholder="Nom complet" required>
-            <input type="email" name="from_email" placeholder="Email" required>
-            <input type="tel" name="phone" placeholder="Téléphone" required>
-            <input type="date" name="date" required>
-            <input type="time" name="time" required>
-            <input type="number" name="guests" placeholder="Nombre de personnes" required>
-
-            <button type="submit" class="btn-primary">Réserver</button>
-
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nom complet</label>
+                    <input type="text" name="from_name" placeholder="Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="from_email" placeholder="jean@exemple.com" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Téléphone</label>
+                    <input type="tel" name="phone" placeholder="+33 6 00 00 00 00" required>
+                </div>
+                <div class="form-group">
+                    <label>Nombre de personnes</label>
+                    <input type="number" name="guests" placeholder="2" min="1" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Heure</label>
+                    <input type="time" name="time" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary full">Réserver</button>
         </form>
 
         <div id="form-status"></div>
     </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- =============== FOOTER =============== -->
 <footer class="footer">
     <div class="container footer-container">
-        <p>© 2026 Art de la Table - Tous droits réservés</p>
-
+        <div class="footer-brand">
+            <span class="logo-mark">✦</span>
+            <p>Art de la Table</p>
+            <small>Site fictif · Projet de démonstration</small>
+        </div>
+        <p class="footer-copy">© 2026 Fabrice Houeto · Tous droits réservés</p>
         <div class="socials">
-            <a><i class="fab fa-facebook-f"></i></a>
-            <a><i class="fab fa-instagram"></i></a>
-            <a><i class="fab fa-x-twitter"></i></a>
-            <a href="https://wa.me/2290191690292" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:contact@artdelatable.com"><i class="fas fa-envelope"></i></a>
+            <a aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/2290191690292" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </footer>
 
-<!-- ================= EmailJS ================= -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<!-- ================= JS ================= -->
 <script src="script.js"></script>
-
 </body>
 </html>
-
