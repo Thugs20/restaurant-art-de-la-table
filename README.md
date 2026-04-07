@@ -146,7 +146,7 @@ Spécialisé dans la conception de sites modernes, rapides et adaptés aux besoi
 
 - 📞 [+229 01 91 69 02 92](tel:+2290191690292)
 - 💬 [WhatsApp](https://wa.me/22991690292)
-- 🌐 [fabrice-services-info.netlify.app](https://fabrice-services-info.netlify.app/)
+- 🌐 [hfrwebdesigner.vercel.app](https://hfrwebdesigner.vercel.app/)
 
 ---
 
